@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rodrigo Flávio - Engenheiro de Software & Tech Partner. Desenvolvimento de e-commerces de alta performance, sistemas web sob medida (automações, vendas, atendimento) e marketing digital.">
+    <title>Rodrigo Flávio | Engenheiro de Software & Tech Partner</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <!-- Custom Glowing Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-glow"></div>
+
+    <!-- 3D Canvas Background -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Header / Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo" id="nav-logo">
+                <span class="logo-text">RF</span><span class="logo-dot">.</span>
+            </a>
+            
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="#inicio" class="nav-link active" id="link-inicio">Início</a></li>
+                    <li><a href="#sobre" class="nav-link" id="link-sobre">Sobre</a></li>
+                    <li><a href="#expertise" class="nav-link" id="link-expertise">Expertise</a></li>
+                    <li><a href="#projetos" class="nav-link" id="link-projetos">Projetos</a></li>
+                    <li><a href="#carreira" class="nav-link" id="link-carreira">Carreira</a></li>
+                    <li><a href="#habilidades" class="nav-link" id="link-habilidades">Habilidades</a></li>
+                    <li><a href="#contato" class="nav-link btn-header" id="link-contato">Fale Comigo</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="curriculo.html" class="theme-toggle" title="Currículo Tradicional (Impressão / PDF)" id="cv-print-link">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </a>
+                <button class="theme-toggle" id="theme-btn" aria-label="Alterar tema">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="mobile-nav-toggle" id="menu-btn" aria-label="Abrir menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-menu" id="mobile-nav">
+        <ul>
+            <li><a href="#inicio" class="mobile-link">Início</a></li>
+            <li><a href="#sobre" class="mobile-link">Sobre</a></li>
+            <li><a href="#expertise" class="mobile-link">Expertise</a></li>
+            <li><a href="#projetos" class="mobile-link">Projetos</a></li>
+            <li><a href="#carreira" class="mobile-link">Carreira</a></li>
+            <li><a href="#habilidades" class="mobile-link">Habilidades</a></li>
+            <li><a href="curriculo.html" class="mobile-link" style="color: var(--accent-cyan);"><i class="fa-solid fa-file-pdf"></i> Currículo Tradicional</a></li>
+            <li><a href="#contato" class="mobile-link mobile-btn">Fale Comigo</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-tag reveal-item" id="hero-tag-text">
+                        <span class="tag-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <span class="tag-text">Engenheiro de Software • Formando em Agosto/2026</span>
+                    </div>
+                    <h1 class="hero-title reveal-item" id="hero-main-title">
+                        Construindo <span class="gradient-text-cyan">Sistemas</span> & <span class="gradient-text-purple">E-commerces</span> de Alto Impacto
+                    </h1>
+                    <p class="hero-description reveal-item" id="hero-desc-text">
+                        Transformo ideias complexas em soluções digitais sob medida: desde e-commerces focados em conversão até sistemas inteligentes de automação, vendas e atendimento. Desenvolvo tecnologia robusta para potencializar o seu negócio.
+                    </p>
+                    <div class="hero-buttons reveal-item" id="hero-btn-container">
+                        <a href="#contato" class="btn btn-primary" id="btn-hero-contact">
+                            <span class="btn-text">Fazer Orçamento</span>
+                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                        </a>
+                        <a href="#projetos" class="btn btn-secondary" id="btn-hero-portfolio">
+                            <span class="btn-text">Ver Projetos</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- Interactive 3D Card / Container -->
+                    <div class="hero-3d-card" id="hero-card-3d">
+                        <div class="card-glow"></div>
+                        <div class="card-inner">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="filename">rodrigo.js</span>
+                            </div>
+                            <div class="code-body">
+                                <span class="code-line"><span class="keyword">const</span> developer = {</span>
+                                <span class="code-line indent"><span class="property">name</span>: <span class="string">'Rodrigo Flávio'</span>,</span>
+                                <span class="code-line indent"><span class="property">role</span>: <span class="string">'Software Engineer'</span>,</span>
+                                <span class="code-line indent"><span class="property">skills</span>: [<span class="string">'PHP'</span>, <span class="string">'JS'</span>, <span class="string">'SQL'</span>, <span class="string">'HTML/CSS'</span>],</span>
+                                <span class="code-line indent"><span class="property">focus</span>: [<span class="string">'E-commerce'</span>, <span class="string">'Custom Systems'</span>],</span>
+                                <span class="code-line indent"><span class="property">experience</span>: <span class="string">'Unopar Rubiataba'</span>,</span>
+                                <span class="code-line indent"><span class="property">status</span>: <span class="string">'Graduating August 2026'</span></span>
+                                <span class="code-line">};</span>
+                                <span class="code-line"></span>
+                                <span class="code-line"><span class="keyword">function</span> <span class="function-name">buildSolution</span>(clientNeeds) {</span>
+                                <span class="code-line indent"><span class="keyword">return</span> <span class="keyword">new</span> <span class="class-name">TailoredSystem</span>(clientNeeds);</span>
+                                <span class="code-line">}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-scroll-indicator">
+                <a href="#sobre" aria-label="Ir para seção Sobre">
+                    <span class="mouse-icon">
+                        <span class="wheel"></span>
+                    </span>
+                    <span class="scroll-text">Role para explorar</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="about-section">
+            <div class="container">
+                <div class="section-title-wrapper scroll-reveal">
+                    <span class="section-subtitle">Sobre Mim</span>
+                    <h2 class="section-title">Quem é o profissional por trás da tecnologia?</h2>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-image-column scroll-reveal">
+                        <div class="image-wrapper-3d" id="profile-card">
+                            <div class="image-glow"></div>
+                            <img src="rodrigo.png" alt="Rodrigo Flávio" class="profile-image">
+                            <div class="image-overlay-info">
+                                <span class="name">Rodrigo Flávio</span>
+                                <span class="role">Marketing & Dev</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-content-column scroll-reveal">
+                        <h3 class="about-subtitle">Engenheiro de Software & Especialista em Soluções Digitais</h3>
+                        <p class="about-text">
+                            Olá! Sou desenvolvedor de software com foco na criação de sistemas customizados e e-commerces de alto valor comercial. Atualmente, estou no último semestre da graduação em <strong>Engenharia de Software</strong> na Unopar (conclusão em agosto de 2026), combinando teoria avançada de design de software com experiência de mercado real.
+                        </p>
+                        <p class="about-text">
+                            Atualmente, integro o time da <strong>Unopar Rubiataba da Andratti</strong> no desenvolvimento de estratégias de marketing digital, criação de identidades visuais de impacto e soluções web que impulsionam captação e resultados, além de atuar ativamente como desenvolvedor freelancer criando lojas virtuais e softwares sob demanda.
+                        </p>
+                        
+                        <!-- Value Stats Grid -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-num" data-val="200">0</span><span class="stat-plus">+</span>
+                                <span class="stat-label">Alunos Atendidos (Catálogo Unopar)</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-num" data-val="4">0</span><span class="stat-plus"></span>
+                                <span class="stat-label">Anos de Estudos & Projetos</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-num" data-val="100">0</span><span class="stat-plus">%</span>
+                                <span class="stat-label">Projetos Sob Medida</span>
+                            </div>
+                        </div>
+                        
+                        <div class="about-cta-wrapper">
+                            <a href="#contato" class="btn btn-primary">Fazer Orçamento</a>
+                            <a href="curriculo.html" class="btn btn-secondary" style="margin-left: 15px;"><i class="fa-solid fa-file-pdf"></i> Currículo Tradicional (PDF)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise" class="expertise-section">
+            <div class="container">
+                <div class="section-title-wrapper scroll-reveal">
+                    <span class="section-subtitle">O que eu faço</span>
+                    <h2 class="section-title">Soluções digitais de alta performance e valor</h2>
+                </div>
+                
+                <div class="expertise-grid">
+                    <!-- Card 1: E-commerces -->
+                    <div class="expertise-card scroll-reveal" id="exp-card-ecommerce">
+                        <div class="card-icon-wrapper cyan">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <h3 class="card-title">E-commerces de Alta Conversão</h3>
+                        <p class="card-description">
+                            Desenvolvimento de lojas virtuais completas, ágeis e estruturadas. Foco total em usabilidade, segurança de dados, integrações de pagamento/frete modernas e design otimizado para transformar visitas em vendas reais.
+                        </p>
+                        <div class="card-tags">
+                            <span>PHP</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                            <span>Bancos de Dados</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2: Sistemas customizados -->
+                    <div class="expertise-card scroll-reveal" id="exp-card-systems">
+                        <div class="card-icon-wrapper purple">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <h3 class="card-title">Sistemas Web Sob Medida</h3>
+                        <p class="card-description">
+                            Desenvolvo softwares específicos de acordo com a necessidade da sua empresa: sistemas para automações de processos, controle e otimização de vendas, canais e painéis de atendimento ao cliente, CRMs e muito mais.
+                        </p>
+                        <div class="card-tags">
+                            <span>PHP / MySQL</span>
+                            <span>Automações</span>
+                            <span>Painéis Administrativos</span>
+                            <span>APIs</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3: Marketing & Design -->
+                    <div class="expertise-card scroll-reveal" id="exp-card-marketing">
+                        <div class="card-icon-wrapper pink">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="card-title">Marketing Digital & Identidade</h3>
+                        <p class="card-description">
+                            Gestão de mídias, criação de anúncios de alto engajamento, estruturação de estratégias de captação de leads e desenvolvimento de identidades visuais fortes que fortalecem marcas corporativas na sociedade.
+                        </p>
+                        <div class="card-tags">
+                            <span>Google/Meta Ads</span>
+                            <span>Branding</span>
+                            <span>Criação de Mídias</span>
+                            <span>Copywriting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio / Projects Section -->
+        <section id="projetos" class="portfolio-section">
+            <div class="container">
+                <div class="section-title-wrapper scroll-reveal">
+                    <span class="section-subtitle">Meus Trabalhos</span>
+                    <h2 class="section-title">Tecnologias que geram valor prático</h2>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card scroll-reveal" id="project-unopar">
+                        <div class="project-media">
+                            <div class="project-overlay">
+                                <span class="project-category">Sistema Corporativo</span>
+                                <h3 class="project-name">Catálogo Online de Graduações</h3>
+                                <p class="project-desc-hover">Sistema web personalizado desenvolvido para a Unopar para facilitar a visualização e seleção de cursos, agilizando o atendimento e a captação.</p>
+                                <div class="project-tech-stack">
+                                    <span>HTML5</span>
+                                    <span>CSS3</span>
+                                    <span>JavaScript</span>
+                                    <span>Banco de Dados</span>
+                                </div>
+                            </div>
+                            <div class="project-bg-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <!-- Metrics badge -->
+                            <div class="project-badge"><i class="fa-solid fa-users"></i> 200+ Alunos Ativos</div>
+                        </div>
+                        <div class="project-details">
+                            <h3>Catálogo Online de Graduações</h3>
+                            <p>Plataforma interativa para consulta rápida de cursos, integrada para guiar novos alunos no processo seletivo.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card scroll-reveal" id="project-ecommerce">
+                        <div class="project-media">
+                            <div class="project-overlay">
+                                <span class="project-category">E-commerce</span>
+                                <h3 class="project-name">Loja Virtual Customizada</h3>
+                                <p class="project-desc-hover">Plataforma completa de vendas virtuais criada sob demanda para clientes de varejo e setores especiais (como barcos), integrando gestão de estoque e pagamentos.</p>
+                                <div class="project-tech-stack">
+                                    <span>PHP</span>
+                                    <span>MySQL</span>
+                                    <span>Bootstrap</span>
+                                    <span>API de Pagamentos</span>
+                                </div>
+                            </div>
+                            <div class="project-bg-icon"><i class="fa-solid fa-store"></i></div>
+                        </div>
+                        <div class="project-details">
+                            <h3>Lojas Virtuais Premium</h3>
+                            <p>Plataformas robustas de e-commerce personalizadas para alta conversão e fácil administração.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card scroll-reveal" id="project-saas">
+                        <div class="project-media">
+                            <div class="project-overlay">
+                                <span class="project-category">Software SaaS</span>
+                                <h3 class="project-name">SaaS para Micro e Pequenas Empresas</h3>
+                                <p class="project-desc-hover">Desenvolvimento de painéis integrados e softwares baseados em nuvem para automação e otimização das operações internas de pequenos negócios.</p>
+                                <div class="project-tech-stack">
+                                    <span>PHP</span>
+                                    <span>MySQL</span>
+                                    <span>JavaScript</span>
+                                    <span>Admin Dashboard</span>
+                                </div>
+                            </div>
+                            <div class="project-bg-icon"><i class="fa-solid fa-rocket"></i></div>
+                        </div>
+                        <div class="project-details">
+                            <h3>Sistemas Administrativos SaaS</h3>
+                            <p>Sistemas modulares para automação de tarefas cotidianas e otimização de vendas e leads.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career / Timeline Section -->
+        <section id="carreira" class="timeline-section">
+            <div class="container">
+                <div class="section-title-wrapper scroll-reveal">
+                    <span class="section-subtitle">Trajetória</span>
+                    <h2 class="section-title">Carreira & Formação Acadêmica</h2>
+                </div>
+                
+                <div class="timeline-wrapper">
+                    <!-- Line down the middle -->
+                    <div class="timeline-progress-line"></div>
+                    
+                    <!-- Item 1: Graduação -->
+                    <div class="timeline-item left-item scroll-reveal">
+                        <div class="timeline-dot-wrapper">
+                            <div class="timeline-dot purple-glow"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">AGOSTO / 2026</span>
+                            <h3 class="timeline-title">Formação em Engenharia de Software</h3>
+                            <span class="timeline-company">Faculdade Unopar</span>
+                            <p class="timeline-text">
+                                Formação acadêmica focada no desenvolvimento e projeto de sistemas complexos, arquitetura de software de alta qualidade, metodologias ágeis e padrões de engenharia modernos.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2: Freelancer -->
+                    <div class="timeline-item right-item scroll-reveal">
+                        <div class="timeline-dot-wrapper">
+                            <div class="timeline-dot cyan-glow"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2024 - ATIVO</span>
+                            <h3 class="timeline-title">Desenvolvedor Software Freelancer</h3>
+                            <span class="timeline-company">fiverr.com & Projetos Diretos</span>
+                            <p class="timeline-text">
+                                Atuação direta com clientes nacionais e internacionais criando sites institucionais, e-commerces completos em PHP e JS, além de sistemas customizados para diversas áreas comerciais.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3: Unopar Rubiataba -->
+                    <div class="timeline-item left-item scroll-reveal">
+                        <div class="timeline-dot-wrapper">
+                            <div class="timeline-dot purple-glow"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2023 - ATIVO</span>
+                            <h3 class="timeline-title">Marketing Digital & Gestão de Projetos</h3>
+                            <span class="timeline-company">Faculdade Unopar Rubiataba da Andratti</span>
+                            <p class="timeline-text">
+                                Atuação com marketing digital avançado, gestão de tráfego pago, desenvolvimento de landpages rápidas, análise de leads e estruturação de mídias para conversão e atração estudantil.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4: Web Development Course -->
+                    <div class="timeline-item right-item scroll-reveal">
+                        <div class="timeline-dot-wrapper">
+                            <div class="timeline-dot cyan-glow"></div>
+                        </div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2022 - CONCLUÍDO</span>
+                            <h3 class="timeline-title">Desenvolvimento Web Profissional</h3>
+                            <span class="timeline-company">Faculdade Unopar</span>
+                            <p class="timeline-text">
+                                Curso de graduação estruturado para o desenvolvimento frontend e backend, abordando linguagens de programação fundamentais, modelagem de banco de dados e lógica voltada para a web.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Certifications Section -->
+        <section id="habilidades" class="skills-section">
+            <div class="container">
+                <div class="section-title-wrapper scroll-reveal">
+                    <span class="section-subtitle">Competências</span>
+                    <h2 class="section-title">Habilidades Técnicas & Cursos Extra</h2>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Left: Skills Circles and bars -->
+                    <div class="skills-left-column scroll-reveal">
+                        <h3 class="skills-column-title">Habilidades em Destaque</h3>
+                        
+                        <div class="skills-list">
+                            <!-- Skill 1 -->
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Desenvolvimento Web (JS, HTML, CSS)</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill cyan-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skill 2 -->
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Desenvolvimento Backend (PHP, MySQL)</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill purple-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skill 3 -->
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Design UI/UX & Bootstrap Framework</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill cyan-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Skill 4 -->
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Marketing Digital, Anúncios & Leads</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill purple-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Certifications list -->
+                    <div class="skills-right-column scroll-reveal">
+                        <h3 class="skills-column-title">Certificações & Cursos</h3>
+                        
+                        <div class="certs-list">
+                            <!-- Cert 1 -->
+                            <div class="cert-card">
+                                <div class="cert-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <div class="cert-info">
+                                    <h4>Formação Profissional de Vendas</h4>
+                                    <p>Unico - Universidade Cogna (Cognitive Education)</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Cert 2 -->
+                            <div class="cert-card">
+                                <div class="cert-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                <div class="cert-info">
+                                    <h4>Marketing e Leads (Básico e Avançado)</h4>
+                                    <p>Fundação Bradesco</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Cert 3 -->
+                            <div class="cert-card">
+                                <div class="cert-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                                <div class="cert-info">
+                                    <h4>Pacote Office Profissional</h4>
+                                    <p>Fundação Bradesco</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Cert 4 -->
+                            <div class="cert-card">
+                                <div class="cert-icon"><i class="fa-solid fa-language"></i></div>
+                                <div class="cert-info">
+                                    <h4>Idiomas: Inglês & Espanhol</h4>
+                                    <p>Cursos de Idiomas - Básico / Intermediário</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="contact-section">
+            <div class="container">
+                <div class="section-title-wrapper scroll-reveal">
+                    <span class="section-subtitle">Contato</span>
+                    <h2 class="section-title">Vamos planejar seu próximo sistema?</h2>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info-column scroll-reveal">
+                        <h3 class="contact-column-title">Meus Canais</h3>
+                        <p class="contact-intro">
+                            Entre em contato direto comigo para tirar dúvidas, fazer orçamentos ou propor projetos de e-commerces e automações.
+                        </p>
+                        
+                        <div class="contact-methods">
+                            <!-- Phone / WhatsApp -->
+                            <a href="https://wa.me/5562995714707" target="_blank" class="contact-card" id="btn-contact-whatsapp">
+                                <div class="contact-icon whatsapp-color">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">WhatsApp</span>
+                                    <span class="contact-value">+55 62 99571-4707</span>
+                                </div>
+                            </a>
+                            
+                            <!-- Email -->
+                            <a href="mailto:rodrigoue9oficial@gmail.com" class="contact-card" id="btn-contact-email">
+                                <div class="contact-icon email-color">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">E-mail</span>
+                                    <span class="contact-value">rodrigoue9oficial@gmail.com</span>
+                                </div>
+                            </a>
+                            
+                            <!-- Website -->
+                            <a href="https://rodrigoue9.netlify.app" target="_blank" class="contact-card" id="btn-contact-website">
+                                <div class="contact-icon web-color">
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Website Atual</span>
+                                    <span class="contact-value">rodrigoue9.netlify.app</span>
+                                </div>
+                            </a>
+                            
+                            <!-- Location -->
+                            <div class="contact-card" id="btn-contact-location">
+                                <div class="contact-icon location-color">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Localização</span>
+                                    <span class="contact-value">Rua Café, 357 Centro, Rubiataba - GO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-column scroll-reveal">
+                        <div class="form-container">
+                            <h3 class="form-title">Enviar Mensagem</h3>
+                            <form id="contact-form-element">
+                                <div class="form-group">
+                                    <label for="form-name">Seu Nome</label>
+                                    <input type="text" id="form-name" placeholder="Insira seu nome completo" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-email">Seu E-mail</label>
+                                    <input type="email" id="form-email" placeholder="nome@provedor.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-subject">Assunto</label>
+                                    <select id="form-subject" required>
+                                        <option value="" disabled selected>Selecione um assunto</option>
+                                        <option value="ecommerce">Projeto de E-commerce</option>
+                                        <option value="sistema">Sistema Web / Automação</option>
+                                        <option value="marketing">Marketing Digital / Tráfego</option>
+                                        <option value="outros">Outro Assunto</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-message">Mensagem</label>
+                                    <textarea id="form-message" rows="5" placeholder="Descreva os detalhes da sua necessidade..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block" id="btn-submit-message">
+                                    <span class="btn-text">Enviar Mensagem</span>
+                                    <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
+                                </button>
+                            </form>
+                            <div class="form-status-msg" id="form-status"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <a href="#" class="logo">
+                    <span class="logo-text">RF</span><span class="logo-dot">.</span>
+                </a>
+                <p class="footer-tagline">Construindo soluções escaláveis e e-commerces que maximizam lucros.</p>
+            </div>
+            <div class="footer-right">
+                <p class="copyright">&copy; 2026 Rodrigo Flávio. Todos os direitos reservados.</p>
+                <p class="author">Desenvolvido com <i class="fa-solid fa-heart animate-heart"></i> e JavaScript Puro.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5562995714707" class="whatsapp-floating" target="_blank" aria-label="Fale comigo no WhatsApp" id="floating-whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Libraries (CDN) -->
+    <!-- GSAP for core animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- GSAP ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Three.js for 3D background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+</body>
+</html>
